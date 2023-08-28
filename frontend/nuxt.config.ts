@@ -1,6 +1,12 @@
 // https://nuxt.com/docs/guide/directory-structure/nuxt.config
 export default defineNuxtConfig({
     css: ["@/assets/globals.scss"],
+    runtimeConfig: {
+        public: {
+          baseURL: process.env.BASE_API_URL
+        }
+      },
+    
     vite: {
       css: {
         preprocessorOptions: {

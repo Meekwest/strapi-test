@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "learnings",
+  "info": {
+    "singularName": "learning",
+    "pluralName": "learnings",
+    "displayName": "Learning",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "developer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::developer.developer",
+      "inversedBy": "learnings"
+    },
+    "period": {
+      "type": "string",
+      "required": true
+    },
+    "university": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::university.university"
+    },
+    "specialization": {
+      "type": "text",
+      "required": true
+    },
+    "faculty": {
+      "type": "text",
+      "required": true,
+      "unique": false
+    }
+  }
+}
